@@ -44,7 +44,7 @@ const profesores = [
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.getElementById('profesores-container');
  
-  // Recorremos el array y creamos una tarjeta por cada profesor
+  // Recorre el array y creamos una tarjeta por cada profesor
   profesores.forEach((profesor, index) => {
     // Columna de Bootstrap
     const col = document.createElement('div');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'prof-card';
     card.style.cursor = 'pointer';
-    // Guardamos el índice del profesor en un atributo data-*
+    // Guarda el índice del profesor en  data-*
     card.setAttribute('data-profesor-index', index);
  
     // Contenedor de la imagen
@@ -83,22 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
     desc.className = 'prof-desc';
     desc.textContent = profesor.descripcion;
  
-    // El cuerpo
+    // cuerpo
     body.appendChild(specialty);
     body.appendChild(name);
     body.appendChild(desc);
  
-    // La tarjeta
+    //  tarjeta
     card.appendChild(imgWrap);
     card.appendChild(body);
  
-    // La columna
+    // columna
     col.appendChild(card);
  
     //  columna al contenedor principal
     contenedor.appendChild(col);
  
-    // 3. EVENTO CLICK: abrir el modal con la info del profesor
+    // 3. EVENTO CLICK: abre el modal con la info del profesor
     card.addEventListener('click', () => {
       abrirModalProfesor(profesor);
     });
@@ -117,7 +117,7 @@ function abrirModalProfesor(profesor) {
  
   // Lista de cursos
   const listaCursos = document.getElementById('modalProfesorCursos');
-  listaCursos.innerHTML = ''; // limpiamos lo anterior
+  listaCursos.innerHTML = ''; // limpia lo anterior
  
   profesor.cursosQueImparte.forEach(curso => {
     const li = document.createElement('li');
@@ -125,7 +125,7 @@ function abrirModalProfesor(profesor) {
     listaCursos.appendChild(li);
   });
  
-  // Componente Modal de Bootstrap para mostrarlo
+  // Componente Modal de Bootstrap 
  
   const modal = new bootstrap.Modal(document.getElementById('modalProfesor'));
   modal.show();
