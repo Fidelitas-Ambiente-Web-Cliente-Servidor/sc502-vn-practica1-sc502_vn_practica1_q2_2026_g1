@@ -7,7 +7,7 @@
 const profesores = [
   {
     nombre: "Valeria Calvo",
-    especialidad: "Ciencias de la Información",
+    especialidad: "Ciencias y Arquitectura de la Información",
     descripcion: "Especialista en gestión de información y tecnologías documentales, con amplia experiencia en entornos académicos y bibliotecológicos.",
     foto: "img/IMG_20211018_081536.jpg",
     correo: "valeria.calvo@codenova.ac",
@@ -39,7 +39,7 @@ const profesores = [
   }
 ];
 
-// 2. RENDERIZAR TARJETAS
+// 2. RENDERIZA TARJETAS
 
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.getElementById('profesores-container');
