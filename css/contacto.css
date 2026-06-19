@@ -1,3 +1,4 @@
+/* ===== CONTACTO.CSS ===== */
 
 :root {
   --color-bg: #f4f1eb;
@@ -17,6 +18,7 @@
   --transition: all 0.3s ease;
 }
 
+/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -37,6 +39,8 @@ a {
   width: min(1120px, 90%);
   margin: 0 auto;
 }
+
+/* ===== NAVBAR ===== */
 
 .navbar {
   background: var(--color-bg);
@@ -111,6 +115,8 @@ a {
   display: none;
 }
 
+/* ===== HEADER CONTACTO ===== */
+
 .page-header {
   padding: 7rem 0 6rem;
   text-align: center;
@@ -163,6 +169,7 @@ a {
   margin: 0 auto;
 }
 
+/* ===== SECCIÓN CONTACTO ===== */
 
 main {
   background: var(--color-bg);
@@ -206,6 +213,7 @@ h2 {
   margin: 0 0 1.5rem;
 }
 
+/* UTILIDADES QUE USA TU HTML */
 .my-5 {
   margin-top: 0;
   margin-bottom: 0;
@@ -223,6 +231,7 @@ h2 {
   margin-top: 1.3rem;
 }
 
+/* ===== FORMULARIO ===== */
 
 #formContacto {
   margin-top: 0.8rem;
@@ -262,6 +271,7 @@ h2 {
   box-shadow: 0 0 0 0.13rem rgba(217, 75, 38, 0.16);
 }
 
+/* ===== BOTÓN ===== */
 
 .btn-contact {
   display: inline-flex;
@@ -299,6 +309,7 @@ h2 {
   opacity: 0.8;
 }
 
+/* ===== INFORMACIÓN CONTACTO ===== */
 
 .col-lg-5 p {
   color: var(--color-muted);
@@ -308,12 +319,15 @@ h2 {
   margin: 0 0 0.8rem;
 }
 
+/* ===== MAPA ===== */
 
 iframe {
   width: 100%;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border) !important;
 }
+
+/* ===== MENSAJES PARA JS ===== */
 
 .mensaje-error {
   display: block;
@@ -333,6 +347,7 @@ iframe {
   font-weight: 700;
 }
 
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
   .navbar .container {

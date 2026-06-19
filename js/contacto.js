@@ -1,92 +1,125 @@
+// Obtener los elementos del formulario
+const formContacto = document.getElementById("formContacto");
+const nombre = document.getElementById("nombre");
+const correo = document.getElementById("correo");
+const telefono = document.getElementById("telefono");
+const asunto = document.getElementById("asunto");
+const mensaje = document.getElementById("mensaje");
+const btnEnviar = document.getElementById("btnEnviar");
+const mensajeExito = document.getElementById("mensajeExito");
 
+// Obtener los elementos donde se mostrarán los errores
+const errorNombre = document.getElementById("errorNombre");
+const errorCorreo = document.getElementById("errorCorreo");
+const errorTelefono = document.getElementById("errorTelefono");
+const errorAsunto = document.getElementById("errorAsunto");
+const errorMensaje = document.getElementById("errorMensaje");
 
+// Valida que el nombre tenga mínimo 5 caracteres y solo letras o espacios
+function validarNombre() {
+  const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const formContacto = document.getElementById('formContacto');
+  if (nombre.value.trim().length < 5) {
+    errorNombre.textContent = "El nombre debe tener mínimo 5 caracteres.";
+    return false;
+  }
 
-  const nombre = document.getElementById('nombre');
-  const correo = document.getElementById('correo');
-  const telefono = document.getElementById('telefono');
-  const asunto = document.getElementById('asunto');
-  const mensaje = document.getElementById('mensaje');
+  if (!regexNombre.test(nombre.value.trim())) {
+    errorNombre.textContent = "El nombre solo puede contener letras y espacios.";
+    return false;
+  }
 
-  const errorNombre = document.getElementById('errorNombre');
-  const errorCorreo = document.getElementById('errorCorreo');
-  const errorTelefono = document.getElementById('errorTelefono');
-  const errorAsunto = document.getElementById('errorAsunto');
-  const errorMensaje = document.getElementById('errorMensaje');
+  errorNombre.textContent = "";
+  return true;
+}
 
-  const btnEnviar = document.getElementById('btnEnviar');
-  const mensajeExito = document.getElementById('mensajeExito');
+// Valida el correo usando una expresión regular
+function validarCorreo() {
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  nombre.addEventListener('input', validarFormulario);
-  correo.addEventListener('input', validarFormulario);
-  telefono.addEventListener('input', validarFormulario);
-  asunto.addEventListener('input', validarFormulario);
-  mensaje.addEventListener('input', validarFormulario);
+  if (!regexCorreo.test(correo.value.trim())) {
+    errorCorreo.textContent = "Ingrese un correo electrónico válido.";
+    return false;
+  }
 
-  formContacto.addEventListener('submit', (event) => {
-    event.preventDefault();
+  errorCorreo.textContent = "";
+  return true;
+}
 
-    if (validarFormulario()) {
-      mensajeExito.textContent = 'Mensaje enviado correctamente.';
-      formContacto.reset();
-      btnEnviar.disabled = true;
-    }
-  });
+// Valida que el teléfono tenga solo números y mínimo 8 dígitos
+function validarTelefono() {
+  const regexTelefono = /^[0-9]+$/;
 
-  function validarFormulario() {
-    let valido = true;
+  if (!regexTelefono.test(telefono.value.trim())) {
+    errorTelefono.textContent = "El teléfono solo puede contener números.";
+    return false;
+  }
 
-    mensajeExito.textContent = '';
+  if (telefono.value.trim().length < 8) {
+    errorTelefono.textContent = "El teléfono debe tener mínimo 8 dígitos.";
+    return false;
+  }
 
-    const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const regexTelefono = /^[0-9]+$/;
+  errorTelefono.textContent = "";
+  return true;
+}
 
-    if (nombre.value.trim().length < 5) {
-      errorNombre.textContent = 'El nombre debe tener mínimo 5 caracteres.';
-      valido = false;
-    } else if (!regexNombre.test(nombre.value.trim())) {
-      errorNombre.textContent = 'El nombre solo debe contener letras y espacios.';
-      valido = false;
-    } else {
-      errorNombre.textContent = '';
-    }
+// Valida que el asunto tenga mínimo 3 caracteres
+function validarAsunto() {
+  if (asunto.value.trim().length < 3) {
+    errorAsunto.textContent = "El asunto debe tener mínimo 3 caracteres.";
+    return false;
+  }
 
-    if (!regexCorreo.test(correo.value.trim())) {
-      errorCorreo.textContent = 'Ingrese un correo electrónico válido.';
-      valido = false;
-    } else {
-      errorCorreo.textContent = '';
-    }
+  errorAsunto.textContent = "";
+  return true;
+}
 
-    if (!regexTelefono.test(telefono.value.trim())) {
-      errorTelefono.textContent = 'El teléfono solo debe contener números.';
-      valido = false;
-    } else if (telefono.value.trim().length < 8) {
-      errorTelefono.textContent = 'El teléfono debe tener mínimo 8 dígitos.';
-      valido = false;
-    } else {
-      errorTelefono.textContent = '';
-    }
+// Valida que el mensaje tenga mínimo 20 caracteres
+function validarMensaje() {
+  if (mensaje.value.trim().length < 20) {
+    errorMensaje.textContent = "El mensaje debe tener mínimo 20 caracteres.";
+    return false;
+  }
 
-    if (asunto.value.trim().length < 3) {
-      errorAsunto.textContent = 'El asunto debe tener mínimo 3 caracteres.';
-      valido = false;
-    } else {
-      errorAsunto.textContent = '';
-    }
+  errorMensaje.textContent = "";
+  return true;
+}
 
-    if (mensaje.value.trim().length < 20) {
-      errorMensaje.textContent = 'El mensaje debe tener mínimo 20 caracteres.';
-      valido = false;
-    } else {
-      errorMensaje.textContent = '';
-    }
+function validarFormulario() {
+  const formularioValido =
+    validarNombre() &&
+    validarCorreo() &&
+    validarTelefono() &&
+    validarAsunto() &&
+    validarMensaje();
 
-    btnEnviar.disabled = !valido;
+  btnEnviar.disabled = !formularioValido;
+}
 
-    return valido;
+// Validación en tiempo real
+nombre.addEventListener("input", validarFormulario);
+correo.addEventListener("input", validarFormulario);
+telefono.addEventListener("input", validarFormulario);
+asunto.addEventListener("input", validarFormulario);
+mensaje.addEventListener("input", validarFormulario);
+
+// Evento al enviar el formulario
+formContacto.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (
+    validarNombre() &&
+    validarCorreo() &&
+    validarTelefono() &&
+    validarAsunto() &&
+    validarMensaje()
+  ) {
+    mensajeExito.textContent =
+      "Mensaje enviado correctamente. Pronto nos pondremos en contacto contigo.";
+
+    formContacto.reset();
+    btnEnviar.disabled = true;
   }
 });
+
