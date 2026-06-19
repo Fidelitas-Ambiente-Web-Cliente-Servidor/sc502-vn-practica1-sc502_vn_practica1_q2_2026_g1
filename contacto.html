@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>CodeNova Academy — Contacto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
   <link rel="stylesheet" href="css/contacto.css" />
 </head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg" id="main-navbar">
+  <nav class="navbar" id="main-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">CodeNova<span class="accent">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
-          <li class="nav-item"><a class="nav-link" href="profesores.html">Profesores</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+      <a class="navbar-brand" href="index.html">
+        Code<span class="accent">Nova.</span>
+      </a>
+
+      <div class="navbar-menu" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cursos.html">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profesores.html">Profesores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contacto.html">Contacto</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -31,54 +38,76 @@
 
   <header class="page-header">
     <div class="page-header-deco">04</div>
+
     <div class="container page-header-inner">
       <div class="col-lg-9">
-        <p class="ph-eyebrow"><span class="ph-eyebrow-line"></span>Hablemos</p>
+        <p class="ph-eyebrow">
+          <span class="ph-eyebrow-line"></span>
+          Hablemos
+        </p>
+
         <h1 class="ph-title">Contáctanos</h1>
-        <p class="ph-desc">¿Tienes dudas? Escríbenos y te respondemos pronto.</p>
+
+        <p class="ph-desc">
+          ¿Tienes dudas? Escríbenos y te respondemos pronto.
+        </p>
       </div>
     </div>
   </header>
 
-</body>
-</html>
-
-
-<main class="container my-5">
+  <main class="container my-5">
     <div class="row g-5">
+
       <div class="col-lg-7">
         <h2 class="mb-4">Envíanos un mensaje</h2>
-        <div class="mb-3">
-          <label class="form-label">Nombre completo</label>
-          <input type="text" class="form-control" placeholder="Tu nombre" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" placeholder="correo@ejemplo.com" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" placeholder="+506 0000-0000" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Asunto</label>
-          <input type="text" class="form-control" placeholder="Asunto del mensaje" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Mensaje</label>
-          <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
-        </div>
-        <button class="btn-contact">Enviar mensaje</button>
+
+        <form id="formContacto" novalidate>
+
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" />
+            <small id="errorNombre" class="mensaje-error"></small>
+          </div>
+
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" id="correo" class="form-control" placeholder="correo@ejemplo.com" />
+            <small id="errorCorreo" class="mensaje-error"></small>
+          </div>
+
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" id="telefono" class="form-control" placeholder="+506 0000-0000" />
+            <small id="errorTelefono" class="mensaje-error"></small>
+          </div>
+
+          <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input type="text" id="asunto" class="form-control" placeholder="Asunto del mensaje" />
+            <small id="errorAsunto" class="mensaje-error"></small>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <small id="errorMensaje" class="mensaje-error"></small>
+          </div>
+
+          <button type="submit" id="btnEnviar" class="btn-contact" disabled>
+            Enviar mensaje
+          </button>
+
+          <p id="mensajeExito" class="mensaje-exito"></p>
+
+        </form>
       </div>
-    </div>
-  </main>   
 
-
-  <div class="col-lg-5">
+      <div class="col-lg-5">
         <h2 class="mb-4">Información de contacto</h2>
-        <p> San José, Costa Rica — Barrio Escalante #42</p>
-        <p> +506 2200-1234</p>
-        <p> hola@codenova.academy</p>
+
+        <p>San José, Costa Rica — Barrio Escalante #42</p>
+        <p>+506 2200-1234</p>
+        <p>hola@codenova.academy</p>
 
         <div class="mt-4">
           <iframe
@@ -91,3 +120,10 @@
           </iframe>
         </div>
       </div>
+
+    </div>
+  </main>
+
+  <script src="js/contacto.js"></script>
+</body>
+</html>
