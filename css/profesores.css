@@ -1,0 +1,178 @@
+/* ===== PROFESORES.CSS ===== */
+
+/* ENCABEZADO */
+.prof-header {
+  padding: 10rem 0 5rem;
+  text-align: center;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prof-header-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.prof-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--color-ink);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.prof-header-desc {
+  font-size: 1.05rem;
+  color: var(--color-ink-muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* TARJETAS DE PROFESORES */
+.prof-team {
+  padding: 5rem 0;
+  background: var(--color-bg);
+}
+
+.prof-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+}
+
+.prof-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.prof-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.prof-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prof-card:hover .prof-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.prof-card-body {
+  padding: 1.5rem;
+}
+
+.prof-specialty {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  background: rgba(200, 80, 42, 0.08);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.prof-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+
+.prof-desc {
+  font-size: 0.88rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* MISIÓN Y VISIÓN */
+.prof-mv {
+  padding: 5rem 0;
+  background: var(--color-surface-2);
+}
+
+.mv-card {
+  padding: 3rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+
+.mv-card-dark {
+  background: var(--color-bg-dark);
+  border-color: transparent;
+}
+
+.mv-card-dark .mv-label { color: var(--color-accent); }
+.mv-card-dark .mv-title { color: #ffffff; }
+.mv-card-dark .mv-text  { color: #7a766f; }
+
+.mv-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.mv-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.mv-text {
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+/* MODAL DE PROFESOR */
+.modal-prof-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.modal-content {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+#modalProfesorCursos li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+}
