@@ -72,6 +72,7 @@
 
 .prof-card-body {
   padding: 1.5rem;
+  text-align: center;
 }
 
 .prof-specialty {
@@ -99,80 +100,7 @@
   font-size: 0.88rem;
   color: var(--color-ink-muted);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
-/* MISIÓN Y VISIÓN */
-.prof-mv {
-  padding: 5rem 0;
-  background: var(--color-surface-2);
-}
-
-.mv-card {
-  padding: 3rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  height: 100%;
-}
-
-.mv-card-dark {
-  background: var(--color-bg-dark);
-  border-color: transparent;
-}
-
-.mv-card-dark .mv-label { color: var(--color-accent); }
-.mv-card-dark .mv-title { color: #ffffff; }
-.mv-card-dark .mv-text  { color: #7a766f; }
-
-.mv-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.mv-title {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--color-ink);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.mv-text {
-  font-size: 0.95rem;
-  color: var(--color-ink-muted);
-  line-height: 1.75;
-  margin: 0;
-}
-/* MODAL DE PROFESOR */
-.modal-prof-img {
-  width: 100%;
-  max-height: 280px;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-}
-
-.modal-content {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-}
-
-.modal-title {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  color: var(--color-ink);
-}
-
-#modalProfesorCursos li {
-  padding: 0.3rem 0;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-ink-muted);
-  font-size: 0.9rem;
-}
+/* BOTÓN

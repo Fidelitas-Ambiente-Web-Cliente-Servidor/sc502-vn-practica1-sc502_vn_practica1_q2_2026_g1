@@ -1,0 +1,143 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profesores — CodeNova Academy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/profesores.css" />
+</head>
+<body>
+ 
+  <!-- NAVBAR -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Code<span class="accent">Nova</span></a>
+      <button class="navbar-toggler" type="button" onclick="toggleMenu()">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="profesores.html">Profesores</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <!-- ENCABEZADO -->
+  <section class="prof-header">
+    <div class="container">
+      <p class="prof-header-label">Nuestro equipo</p>
+      <h1 class="prof-header-title">Quienes te guían</h1>
+      <p class="prof-header-desc">Profesionales apasionados por la tecnología y la enseñanza, comprometidos con tu crecimiento.</p>
+    </div>
+  </section>
+ 
+  <!-- TARJETAS DE PROFESORES (generadas con JS) -->
+  <section class="prof-team">
+    <div class="container">
+      <div class="row g-4" id="profesores-container">
+        <!-- Las tarjetas se generan dinámicamente desde profesores.js -->
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MISIÓN Y VISIÓN -->
+  <section class="prof-mv">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="mv-card">
+            <span class="mv-label">Misión</span>
+            <h2 class="mv-title">¿Por qué existimos?</h2>
+            <p class="mv-text">Formar profesionales en tecnología con una educación accesible, práctica y de calidad, que les permita insertarse con confianza en el mercado laboral digital y generar impacto real en sus comunidades.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="mv-card mv-card-dark">
+            <span class="mv-label">Visión</span>
+            <h2 class="mv-title">¿Hacia dónde vamos?</h2>
+            <p class="mv-text">Ser la academia de tecnología de referencia en América Latina, reconocida por la excelencia de sus egresados, la innovación en sus métodos de enseñanza y su compromiso con la democratización del conocimiento digital.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-4">
+          <span class="footer-brand">Code<span class="accent">Nova</span></span>
+          <p class="footer-tagline">Formamos el talento digital del mañana con educación práctica y de calidad.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">in</a>
+            <a href="#" class="social-link">tw</a>
+            <a href="#" class="social-link">ig</a>
+            <a href="#" class="social-link">yt</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">Páginas</p>
+          <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="profesores.html">Profesores</a>
+            <a href="contacto.html">Contacto</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <p class="footer-heading">Contacto</p>
+          <p class="footer-contact-info">📍 San José, Costa Rica</p>
+          <p class="footer-contact-info">📞 +506 2222-3333</p>
+          <p class="footer-contact-info">✉️ info@codenova.ac</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CodeNova Academy. Todos los derechos reservados.</span>
+        <span class="footer-credits">Desarrollado por el equipo G1</span>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- MODAL DE PROFESOR (Bootstrap) -->
+  <div class="modal fade" id="modalProfesor" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalProfesorNombre">Nombre del profesor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalProfesorFoto" src="" alt="" class="modal-prof-img mb-3" />
+          <p><strong>Especialidad:</strong> <span id="modalProfesorEspecialidad"></span></p>
+          <p id="modalProfesorDescripcion"></p>
+          <p><strong>Correo:</strong> <span id="modalProfesorCorreo"></span></p>
+          <p><strong>Cursos que imparte:</strong></p>
+          <ul id="modalProfesorCursos"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost-custom" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+  <script src="../js/profesores.js"></script>
+</body>
+</html>
+ 
