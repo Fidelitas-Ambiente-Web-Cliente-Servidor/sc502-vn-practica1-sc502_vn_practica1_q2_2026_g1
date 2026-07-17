@@ -12,7 +12,7 @@ if (file_exists($controllerFile)) {
 
     if (method_exists($obj, $action)) {
         $obj->$action($id);
-    } else {
+    } else {    
         echo "Acción no encontrada";
     }
 } else {
