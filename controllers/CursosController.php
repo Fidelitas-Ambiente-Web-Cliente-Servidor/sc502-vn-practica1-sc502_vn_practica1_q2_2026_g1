@@ -17,6 +17,6 @@ class CursosController {
 
         $categorias = $modelo->getCategorias();
 
-        require __DIR__ . '/../views/cursos.html';
+        require __DIR__ . '/../views/cursos.php';
     }
 }
