@@ -1,7 +1,7 @@
 services:
   web:
     image: php:8.2-apache   
-    container_name: php-apache-demo
+    container_name: php-apache-demo-v2
     ports:
       - "8080:80"
     volumes:
@@ -11,7 +11,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: mysql-demo
+    container_name: mysql-demo-v2
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -25,7 +25,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-demo
+    container_name: phpmyadmin-demo-v2
     depends_on:
       - db
     environment:
