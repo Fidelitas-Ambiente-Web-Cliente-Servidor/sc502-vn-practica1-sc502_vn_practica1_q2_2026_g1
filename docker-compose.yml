@@ -36,4 +36,3 @@ services:
       - "8082:80"   # phpMyAdmin -> http://localhost:8082
 
 volumes:
-  db_data:SHOW TABLES;

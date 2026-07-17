@@ -1,2 +1,2 @@
 FROM php:8.2-apache
-RUN docker-php-ext-install pdo pdo_mysqldocker compose down
+RUN docker-php-ext-install pdo pdo_mysql
