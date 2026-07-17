@@ -1,15 +1,15 @@
-<?php
+    <?php
 
-require_once "models/IndexModel.php";
+    require_once "models/IndexModel.php";
 
-class IndexController {
+    class IndexController {
 
-    public function index() {
+        public function index() {
 
-        $model = new IndexModel();
+            $model = new IndexModel();
 
-        $cursos = $model->getAll();
+            $cursos = $model->getAll();
 
-        require "views/index.php";
+            require "views/index.php";
+        }
     }
-}
