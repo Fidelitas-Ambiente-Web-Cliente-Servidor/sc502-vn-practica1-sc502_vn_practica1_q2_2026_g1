@@ -16,6 +16,20 @@ INSERT INTO profesores (nombre, especialidad, foto, correo, descripcion, cursos)
 ('Armando Núñez', 'Bases de Datos', 'img/default-profesor.jpg', 'armando.nunez@codenova.ac', 'Especialista en modelado y administración de bases de datos relacionales, con enfoque en optimización de consultas y seguridad de la información.', 'Bases de Datos II, Administración de Servidores');
 
 
+
+CREATE TABLE cursos_destacados (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nombre VARCHAR(100),
+
+    descripcion TEXT,
+
+    precio DECIMAL(10,2),
+
+    imagen VARCHAR(255)
+
+);
 CREATE TABLE cursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
