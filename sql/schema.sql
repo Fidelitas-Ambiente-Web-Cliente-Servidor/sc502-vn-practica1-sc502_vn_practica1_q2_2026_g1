@@ -14,3 +14,19 @@ INSERT INTO profesores (nombre, especialidad, foto, correo, descripcion, cursos)
 ('Ashley Mc Nish Granados', 'Desarrollo Web', 'img/PHOTO-2026-06-03-20-28-40.jpg', 'ashley.mcnish@codenova.ac', 'Desarrolladora frontend con dominio de tecnologías web modernas y experiencia en proyectos colaborativos con control de versiones.', 'Ambiente Web Cliente-Servidor, Diseño UI/UX'),
 ('Sebastián López', 'Ingeniería en Sistemas', 'img/PHOTO-2026-06-03-20-33-59.jpg', 'sebastian.lopez@codenova.ac', 'Ingeniero en sistemas con conocimientos en infraestructura, bases de datos y desarrollo de soluciones tecnológicas para entornos empresariales.', 'Administración de Proyectos, Redes y Comunicaciones');
 ('Armando Núñez', 'Bases de Datos', 'img/default-profesor.jpg', 'armando.nunez@codenova.ac', 'Especialista en modelado y administración de bases de datos relacionales, con enfoque en optimización de consultas y seguridad de la información.', 'Bases de Datos II, Administración de Servidores');
+
+
+
+CREATE TABLE cursos_destacados (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nombre VARCHAR(100),
+
+    descripcion TEXT,
+
+    precio DECIMAL(10,2),
+
+    imagen VARCHAR(255)
+
+);

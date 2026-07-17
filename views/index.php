@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeNova Academy — Inicio</title>
-  <!-- Bootstrap SOLO para sistema de grillas -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Estilos de la pagina -->
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/index.css">
-</head>
-<body>
+<?php require "views/layout/header.php"; ?>
 
-  <!--  NAVBAR-->
-  <nav class="navbar navbar-expand-lg" id="main-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        CodeNova<span class="accent">.</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Menú">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="cursos.html">Cursos</a></li>
-          <li class="nav-item"><a class="nav-link" href="profesores.html">Profesores</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <!--  hero  -->
   <section class="hero-section">
@@ -56,8 +23,8 @@
             con instructores expertos y proyectos del mundo real.
           </p>
           <div class="hero-actions">
-            <a href="cursos.html" class="btn-primary-custom">Explorar Cursos</a>
-            <a href="contacto.html" class="btn-ghost-custom">Contáctanos</a>
+            <a href="index.php?controller=cursos&action=index" class="btn-primary-custom">Explorar Cursos</a>
+            <a href="index.php?controller=contacto&action=index" class="btn-ghost-custom">Contáctanos</a>
           </div>
         </div>
 
@@ -79,11 +46,11 @@
 
     <div class="hero-bottom-bar">
       <div class="container">
-        <a href="cursos.html" class="hero-tag">Desarrollo Web</a>
-        <a href="cursos.html" class="hero-tag">Python</a>
-        <a href="cursos.html" class="hero-tag">Inteligencia Artificial</a>
-        <a href="cursos.html" class="hero-tag">Data Science</a>
-        <a href="cursos.html" class="hero-tag">Ciberseguridad</a>
+        <a href="index.php?controller=cursos&action=index" class="hero-tag">Desarrollo Web</a>
+        <a href="index.php?controller=cursos&action=index" class="hero-tag">Python</a>
+        <a href="index.php?controller=cursos&action=index" class="hero-tag">Inteligencia Artificial</a>
+        <a href="index.php?controller=cursos&action=index" class="hero-tag">Data Science</a>
+        <a href="index.php?controller=cursos&action=index" class="hero-tag">Ciberseguridad</a>
       </div>
     </div>
   </section>
@@ -103,14 +70,57 @@
           </p>
         </div>
         <div data-anim="fade-up" data-delay="100">
-          <a href="cursos.html" class="btn-ghost-custom">Ver todos los cursos</a>
+          <a href="index.php?controller=cursos&action=index" class="btn-ghost-custom">Ver todos los cursos</a>
         </div>
       </div>
 
 
       
-  <!--  tarjetas se hacen desde el js   -->
-  <div class="row g-4" id="contenedorCursos"></div>
+  <!--  tarjetas se hacen desde el php  -->
+<div class="row" id="contenedorCursos">
+
+<?php foreach ($cursos as $curso): ?>
+
+    <div class="col-md-4">
+
+        <div class="course-card">
+
+            <div class="course-card-img">
+
+                <img src="<?= htmlspecialchars($curso['imagen']) ?>"
+                     alt="<?= htmlspecialchars($curso['nombre']) ?>">
+
+                <span class="course-badge <?= htmlspecialchars($curso['badgeClass']) ?>">
+                    <?= htmlspecialchars($curso['badge']) ?>
+                </span>
+
+            </div>
+
+            <div class="course-card-body">
+
+                <span class="course-category">
+                    <?= htmlspecialchars($curso['categoria']) ?>
+                </span>
+
+                <h3 class="course-name">
+                    <?= htmlspecialchars($curso['nombre']) ?>
+                </h3>
+
+                <p class="course-desc">
+                    <?= htmlspecialchars($curso['descripcion']) ?>
+                </p>
+
+                <a href="index.php?controller=cursos&action=index" class="btn-card">
+                    Ver más
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php endforeach; ?>
 
 </div>
 </section>   
@@ -268,68 +278,11 @@
         <em>empieza aqui.</em>
       </h2>
       <p class="cta-subtitle">Sin requisitos previos. A tu ritmo. Con resultados reales.</p>
-      <a href="contacto.html" class="btn-cta">Inscríbete ahora</a>
+      <a href="index.php?controller=contacto&action=index" class="btn-cta">Inscríbete ahora</a>
     </div>
   </section>
 
-  <!--  FOOTER  -->
-  <footer class="main-footer">
-    <div class="container">
-      <div class="row g-5">
 
-        <div class="col-lg-4">
-          <a class="footer-brand" href="index.html">
-            CodeNova<span class="accent">.</span>
-          </a>
-          <p class="footer-tagline">
-            Formando los desarrolladores del mañana desde San José, Costa Rica.
-          </p>
-          <div class="footer-socials">
-            <a href="#" class="social-link" aria-label="Twitter">X</a>
-            <a href="#" class="social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-link" aria-label="GitHub">GH</a>
-          </div>
-        </div>
+      <?php require "views/layout/footer.php"; ?>
 
-        <div class="col-lg-2 col-6">
-          <h4 class="footer-heading">Academia</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cursos.html">Cursos</a></li>
-            <li><a href="profesores.html">Profesores</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6">
-          <h4 class="footer-heading">Programas</h4>
-          <ul class="footer-links">
-            <li><a href="#">Python</a></li>
-            <li><a href="#">Full Stack</a></li>
-            <li><a href="#">Data Science</a></li>
-            <li><a href="#">Ciberseguridad</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4">
-          <h4 class="footer-heading">Contacto</h4>
-          <p class="footer-contact-info">San José, Costa Rica — Barrio Escalante #42</p>
-          <p class="footer-contact-info">+506 2200-1234</p>
-          <p class="footer-contact-info">hola@codenova.academy</p>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 CodeNova Academy — Todos los derechos reservados.</p>
-        <p class="footer-credits">Tarea 1 — Ambiente Web Cliente Servidor — GRUPO 1 — Universidad Fidélitas</p>
-      </div>
-    </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/index.js"></script>
-
-
-</body>
-</html>
+ 
